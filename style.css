@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #111214;
+  --surface: #1a1b1e;
+  --surface-2: #222428;
+  --border: #2e3035;
+  --border-hover: #444750;
+  --accent: #e6e6e6;
+  --accent-soft: #888d96;
+  --text: #f0f0f0;
+  --text-muted: #6b7280;
+  --green: #3fb950;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem 5rem;
+}
+
+/* ── Header ── */
+header {
+  width: 100%;
+  max-width: 560px;
+  padding: 1.8rem 0 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo i {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+/* ── Search ── */
+.user-form {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.user-form input {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-right: none;
+  padding: 0.75rem 1.1rem;
+  font-size: 14px;
+  font-family: "Sora", sans-serif;
+  color: var(--text);
+  border-radius: 8px 0 0 8px;
+  transition: border-color 0.2s;
+}
+
+.user-form input:focus {
+  outline: none;
+  border-color: var(--border-hover);
+}
+
+.user-form input::placeholder {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.user-form button {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0 8px 8px 0;
+  color: var(--text);
+  padding: 0.75rem 1.1rem;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.user-form button:hover {
+  background: var(--border);
+  border-color: var(--border-hover);
+}
+
+/* ── Main ── */
+main {
+  width: 100%;
+  max-width: 560px;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  animation: fadeUp 0.35s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Avatar ── */
+.avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.user-image {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  transition: border-color 0.2s;
+}
+
+.user-image:hover {
+  border-color: var(--border-hover);
+}
+
+/* ── Name ── */
+.user-info {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.user-name h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff !important;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.user-name small {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: #a0a0a0;
+}
+
+/* ── Bio ── */
+.bio-text {
+  color: var(--accent-soft);
+  font-size: 0.85rem;
+  text-align: center;
+  line-height: 1.65;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.2rem;
+  background: var(--surface-2);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* ── Stats ── */
+ul {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  min-width: 85px;
+  transition:
+    border-color 0.2s,
+    transform 0.15s;
+  cursor: default;
+}
+
+ul li:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+ul li i {
+  color: var(--green);
+  font-size: 0.8rem;
+  margin-bottom: 0.1rem;
+}
+
+ul li .stat-number {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+ul li .stat-label {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 1.2rem;
+}
+
+/* ── Repos ── */
+.repos-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.repos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.repos a {
+  text-decoration: none;
+  color: #4a90d9;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.15s;
+}
+
+.repos a:hover {
+  border-color: var(--border-hover);
+  color: var(--text);
+  background: var(--border);
+}
+
+.repos a i {
+  font-size: 0.6rem;
+  opacity: 0.6;
+}
+
+/* ── Error ── */
+.card h2 {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* ── Footer ── */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+footer span {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+}
+
+footer span:last-child {
+  opacity: 0.5;
+}

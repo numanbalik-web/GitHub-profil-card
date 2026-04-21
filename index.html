@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <title>GitHub Profile Card</title>
+  </head>
+  <body>
+    <header>
+      <span class="logo"
+        ><i class="fa-brands fa-github"></i> Profile Explorer</span
+      >
+    </header>
+
+    <form id="form" class="user-form">
+      <input
+        type="text"
+        id="search"
+        placeholder="GitHub kullanıcı adı..."
+        autocomplete="off"
+      />
+      <button type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+
+    <main id="main"></main>
+
+    <footer>
+      <span>© 2026 GitHub Profile Explorer — Numan Balık</span>
+      <span>API: GitHub REST &bull; Vanilla JS + Axios</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>
