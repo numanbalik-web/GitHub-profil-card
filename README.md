@@ -33,14 +33,6 @@ Simple and clean user interface for searching profiles.
 
 ---
 
-## 🖥️ Fullscreen View
-
-![Fullscreen](screen/fullscreen.html.png)
-
-Detailed view of the user profile with structured layout.
-
----
-
 ## 🛠️ Tech Stack
 
 - HTML5  
